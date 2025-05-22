@@ -14,16 +14,19 @@ router.post('/', async (req, res) => {
 });
 
 router.get('/', async (req, res) => {
-  try {
-    const builds = await Build.find();
+  const { characterName, act} = req.query;
+  const filter = {};
+
+  if(characterName) filter.characterName = characterName;
+  if(act) filter.Act = Number(act);
+
+  try{
+    const builds = await Build.find(filter);
     res.json(builds);
   } catch (err) {
-    res.status(500).json({ error: err.message});
+    res.status(500).json({ error: err.message });
   }
 });
 
-router.get('/', (req, res) => {
-  res.json({ message: 'Build routes working!' });
-});
 
 module.exports = router;
