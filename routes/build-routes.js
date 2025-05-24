@@ -1,8 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
+// this is the schema so it will know how the data is supposed to be organized
 const Build = require('../models/build');
 
+// logic for when a user posts a new build
 router.post('/', async (req, res) => {
   try {
     const newBuild = new Build(req.body);

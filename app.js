@@ -1,23 +1,21 @@
-// import the modules needed
+// ================ Imports ====================
 const express = require('express');
-const mongoose = require('mongoose');
-const dotenv = require('dotenv');
 const path = require('path');
 
-// loads enviormenr variables from .env
-// dotenv.config();
 
-// initialize the express app
+// =============== App Setup ===================
 const app = express();
 
-// middleware to parse JSON request bodies
+// ===================== Middleware =============
+// parse any incoming json
 app.use(express.json());
 
 // static files that are from public/
 app.use(express.static(path.join(__dirname, 'public')));
 
-// set up routes
-const buildRoutes = require('./routes/builds');
+// =================== Routes =====================
+const buildRoutes = require('./routes/build-routes');
 app.use('/api/builds', buildRoutes);
 
+// ================= Export App =================
 module.exports = app;
