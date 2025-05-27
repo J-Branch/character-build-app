@@ -1,0 +1,86 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  background-color: #ffffff;
+  color: #001011;
+  padding: 2rem;
+}
+
+/* Main Heading */
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #093a3e;
+}
+
+/* Filters Section */
+#filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+#filters label {
+  font-weight: bold;
+  color: #3aafb9;
+}
+
+#filters select {
+  padding: 0.5rem;
+  border: 2px solid #3aafb9;
+  border-radius: 6px;
+  background-color: #f0f9fa;
+  color: #001011;
+}
+
+#filters button {
+  background-color: #3aafb9;
+  color: #001011;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+#filters button:hover {
+  background-color: #64e9ee;
+  transform: scale(1.05);
+}
+
+/* Results Section */
+#results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+/* Build Card */
+.build-card {
+  background-color: #093a3e;
+  color: #ffffff;
+  padding: 1.25rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.build-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  background-color: #0e4d52;
+}

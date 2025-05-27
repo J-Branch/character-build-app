@@ -1,39 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<body>
-    <nav>...</nav>
-    <main>
-      <h1>Browse Builds</h1>
+  <head>
+    <meta charset="UTF-8">
+    <title>Builds</title>
+    <link rel="stylesheet" href="/styles/builds.css">
+  </head>
+  <body>
+      <nav>...</nav>
+      <main>
+        <h1>Browse Builds</h1>
   
-      <section id="filters">
-        <label for="character-dropdown">Character:</label>
-        <select id="character-dropdown">
-            <option value="">-- Select Characteer --</option>
-            <option value="Gustave">Gustave</option>
-            <option value="Lune">Lune</option>
-            <option value="Maelle">Maelle</option>
-            <option value="Sciel">Sciel</option>
-            <option value="Verso">Verso</option>
-            <option value="Monoco">Monoco</option>
-        </select>
+        <section id="filters">
+          <label for="character-dropdown">Character:</label>
+          <select id="character-dropdown">
+              <option value="">-- Select Characteer --</option>
+              <option value="Gustave">Gustave</option>
+              <option value="Lune">Lune</option>
+              <option value="Maelle">Maelle</option>
+              <option value="Sciel">Sciel</option>
+              <option value="Verso">Verso</option>
+              <option value="Monoco">Monoco</option>
+          </select>
 
-        <label for="act-dropdown">Act:</label>
-        <select id="act-dropdown">
-            <option value="">-- Select Act --</option>
-            <option value="1">Act I</option>
-            <option value="2">Act II</option>
-            <option value="3">Act III</option>
-        </select>
+          <label for="act-dropdown">Act:</label>
+          <select id="act-dropdown">
+              <option value="">-- Select Act --</option>
+              <option value="1">Act I</option>
+              <option value="2">Act II</option>
+              <option value="3">Act III</option>
+          </select>
 
-        <button id="apply-filters">Apply Filters</button>
-      </section>
+          <button id="apply-filters">Apply Filters</button>
+        </section>
   
-      <section id="results">
-        <!-- JS will insert build cards here -->
-      </section>
-    </main>
+        <section id="results">
+          <!-- JS will insert build cards here -->
+        </section>
+      </main>
   
-    <script src="/scripts/builds.js"></script>
+      <script src="/scripts/builds.js"></script>
   </body>
-  </html>
+</html>
   
