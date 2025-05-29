@@ -6,15 +6,71 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif;
-  background-color: #ffffff;
+  background-color: #ffffff; /* white background */
+  color: #001011; /* very dark teal/black for text */
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* styles for header */
+.header {
+  background-color: #97c8eb;
+  padding: 1rem 0;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+  margin: 0 0 0.5rem 0;
   color: #001011;
-  padding: 2rem;
+}
+
+.top-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center; /* center horizontally */
+  gap: 0.5rem;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #093a3e; /* your dark teal */
+}
+
+/* Make links blueish and no underline by default */
+.top-nav a {
+  text-decoration: none;
+  color: #3aafb9; /* your mid teal */
+  transition: color 0.3s ease;
+}
+
+.top-nav a:hover {
+  color: #64e9ee; /* lighter teal on hover */
+}
+
+/* Style list items */
+.top-nav li {
+  position: relative;
+  padding: 0 0.6rem;
+  color: #093a3e;
+  cursor: pointer;
+}
+
+/* Add | separator except after last item */
+.top-nav li:not(:last-child)::after {
+  content: "|";
+  position: absolute;
+  right: 0;
+  color: #093a3e;
+  font-weight: 600;
 }
 
 /* Main Heading */
-h1 {
+main h1 {
   text-align: center;
   margin-bottom: 2rem;
   font-size: 2rem;

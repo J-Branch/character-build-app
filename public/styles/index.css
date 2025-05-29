@@ -8,7 +8,7 @@ body {
 }
 
 .header {
-  background-color: #97c8eb; /* your light blue */
+  background-color: #97c8eb;
   padding: 1rem 0;
   text-align: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
