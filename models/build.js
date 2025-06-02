@@ -6,7 +6,8 @@ const buildSchema = new mongoose.Schema({
     Act: {type: Number, required: true},
     buildName: {type: String, required: true}, 
     skills: [String], // array for the skills
-    weapon:{type: String, required: true} // weapon name 
+    weapon:{type: String, required: true}, // weapon name 
+    userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', default: null } // added for when a user is logged in or not, to fetch their builds
 });
 
 const build = mongoose.model('Build',buildSchema);

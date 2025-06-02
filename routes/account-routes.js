@@ -21,7 +21,7 @@ router.post('/logout', async (req, res) => {
         }
 
         res.clearCookie('connect.sid');
-        res.redirect('/login');
+        res.redirect('/index.html');
     });
 });
 
@@ -66,10 +66,19 @@ router.post('/login', async (req, res) => {
 
         req.session.userId = user._id;
         // res.status(200).json({ message: "Login successful" });
-        res.sendFile(path.join(__dirname, '../views/profile.html'));
+        res.sendFile(path.join(__dirname, '../public/my-builds.html'));
     } catch(err) {
         console.error(err);
         res.status(500).json({ message: "server error" });
+    }
+});
+
+// route for checking to see if a user is logged in
+router.get('/check-auth', (req, res) => {
+    if(req.session.userId) {
+        res.json({ loggedIn: true, userId: req.session.userId });
+    } else {
+        res.json({ loggedIn: false });
     }
 });
 
