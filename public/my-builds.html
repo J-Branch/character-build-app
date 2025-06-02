@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Character Build App</title>
-  <link rel="stylesheet" href="/styles/index.css">
+  <title>My builds</title>
+  <!-- <link rel="stylesheet" href="/styles/index.css"> -->
+  <link rel="stylesheet" href="/styles/builds.css">
 </head>
 <body>
   <header>
     <section class="header">
       <div>
-        <h1>Expedition 33 builds</h1>
+        <h1>My builds</h1>
       </div>
 
       <nav class="top-nav">
@@ -22,20 +23,29 @@
       </nav>
     </section>
   </header> 
-  
-  <main>
-    <h1>Welcome to Expedition 33 builds</h1>
-    <hr></hr>
-    <p>
-      This website will provide a way to store your builds for Expedition 33! 
-      It will also provide some links to guides on how to build, and what the 
-      different stats/attributes mean. 
-    </p>
-  </main>
 
-  <footer>
-    <p>© 2025 Expedition 33 Build App. Not affiliated with the game developers.</p>
-  </footer>
+  <main>
+    <h1>Browse Builds</h1>
+
+    <button id="addBuildButton">Add Build</button>
+
+    <div id="buildFormContainer" style="display: none;">
+      <form id="buildForm">
+        <input type="text" name="characterName" placeholder="Character Name" required />
+        <input type="number" name="Act" placeholder="Act" required />
+        <input type="text" name="buildName" placeholder="Build Name" required />
+        <input type="text" name="weapon" placeholder="Weapon" required />
+        <input type="text" name="skills" placeholder="Skills (comma separated)" required />
+        <button type="submit">Submit Build</button>
+      </form>
+    </div>
+
+    <section id="buildList"></section>
+
+  </main>
+  
+ 
 </body>
 <script src="/scripts/nav.js" defer></script>
+<script src="/scripts/my-builds.js" defer></script>
 </html>

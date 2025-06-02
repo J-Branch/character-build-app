@@ -12,16 +12,19 @@ function requiredLogin(req, res, next) {
   next();
 }
 
+router.use('/user', requiredLogin);
+
 // logic for when a user posts a new build
-router.post('/user', requiredLogin, async (req, res) => {
+router.post('/user', async (req, res) => {
   try {
     const newBuild = new Build({
       ...req.body,
       userId: req.session.userId
-    });s
+    });
     const saveBuild = await newBuild.save();
     res.status(201).json(saveBuild);
   } catch (err) {
+    console.error('failed to save', err.message);
     res.status(400).json({ error: err.message});
   }
 });
@@ -43,7 +46,7 @@ router.get('/', async (req, res) => {
 });
 
 // get builds from logged in user builds
-router.get('/user', requiredLogin, async (req, res) => {
+router.get('/user', async (req, res) => {
   try{
     const userBuilds = await Build.find({ userId: req.session.userId });
     res.json(userBuilds);
@@ -53,7 +56,7 @@ router.get('/user', requiredLogin, async (req, res) => {
 });
 
 // delete build by owned user 
-router.delete('user/:id', requiredLogin, async (req, res) => {
+router.delete('/user/:id', async (req, res) => {
   try {
     const deleted = await Build.findOneAndDelete({
       _id: req.params.id,
